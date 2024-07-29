@@ -49,7 +49,11 @@ void destruirPila(PilaPtr pila) {
         return;
     }
 
-    while(desapilar(pila));
+    DatoPtr datoDesapilado = desapilar(pila);
+
+    while(datoDesapilado != NULL) {
+        datoDesapilado = desapilar(pila);
+    }
 
     free(pila);
 }

@@ -62,7 +62,11 @@ void destruirCola(ColaPtr cola) {
         return;
     }
 
-    while(desencolar(cola));
+    DatoPtr datoDesencolado = desencolar(cola);
+
+    while(datoDesencolado != NULL) {
+        datoDesencolado = desencolar(cola);
+    }
 
     free(cola);
 }
